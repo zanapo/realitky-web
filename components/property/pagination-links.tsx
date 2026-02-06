@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 import {
   Pagination,
   PaginationContent,
@@ -50,9 +48,9 @@ export const PaginationLinks = ({
     <Pagination>
       <PaginationContent>
         <PaginationItem>
-          <PaginationPrevious asChild>
-            <Link href={buildPageLink(baseParams, Math.max(page - 1, 1))} />
-          </PaginationPrevious>
+          <PaginationPrevious
+            href={buildPageLink(baseParams, Math.max(page - 1, 1))}
+          />
         </PaginationItem>
         {items.map((item, index) =>
           item === "ellipsis" ? (
@@ -62,20 +60,18 @@ export const PaginationLinks = ({
           ) : (
             <PaginationItem key={item}>
               <PaginationLink
-                asChild
+                href={buildPageLink(baseParams, item)}
                 isActive={item === page}
               >
-                <Link href={buildPageLink(baseParams, item)}>{item}</Link>
+                {item}
               </PaginationLink>
             </PaginationItem>
           )
         )}
         <PaginationItem>
-          <PaginationNext asChild>
-            <Link
-              href={buildPageLink(baseParams, Math.min(page + 1, totalPages))}
-            />
-          </PaginationNext>
+          <PaginationNext
+            href={buildPageLink(baseParams, Math.min(page + 1, totalPages))}
+          />
         </PaginationItem>
       </PaginationContent>
     </Pagination>
