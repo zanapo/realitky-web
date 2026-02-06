@@ -12,9 +12,9 @@ export const Logo = ({ className }: LogoProps) => (
     <Image
       src="/logo.png"
       alt="Realitní dům"
-      width={400}
-      height={128}
-      className="h-32 w-auto"
+      width={320}
+      height={96}
+      className="h-12 w-auto lg:h-20"
       priority
     />
   </Link>
