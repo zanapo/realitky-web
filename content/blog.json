@@ -1,0 +1,29 @@
+[
+  {
+    "id": "b1",
+    "slug": "jak-pripravit-byt-na-prodej",
+    "title": "Jak připravit byt na prodej a zvýšit jeho hodnotu",
+    "excerpt": "Praktické tipy, díky nimž zvýšíte atraktivitu nemovitosti a zrychlíte prodej.",
+    "category": "Poradna",
+    "content": "Při přípravě bytu na prodej se zaměřte na úklid, drobné opravy a neutrální atmosféru. Doporučujeme odstranit osobní předměty, upravit osvětlení a využít home staging. Důležitá je také kvalitní prezentace a správné nastavení ceny.",
+    "createdAt": "2026-01-10T09:00:00.000Z"
+  },
+  {
+    "id": "b2",
+    "slug": "na-co-myslet-pri-pronajmu",
+    "title": "Na co myslet při pronájmu bytu",
+    "excerpt": "Check-list právních a praktických kroků pro bezpečný a klidný pronájem.",
+    "category": "Pronájem",
+    "content": "Před podpisem smlouvy vždy ověřte nájemníka, nastavte jasná pravidla a připravte předávací protokol. Doporučujeme také pojištění nemovitosti a zajištění pravidelné komunikace.",
+    "createdAt": "2026-01-06T14:30:00.000Z"
+  },
+  {
+    "id": "b3",
+    "slug": "trendy-na-trhu-2026",
+    "title": "Trendy na realitním trhu 2026",
+    "excerpt": "Kam se posouvají ceny, jak se mění preference klientů a co očekávat dál.",
+    "category": "Trh",
+    "content": "Rostoucí poptávka po kvalitním bydlení zvyšuje důraz na energetickou úspornost a kvalitní lokalitu. Kupující více vyhledávají flexibilní dispozice a moderní technologie.",
+    "createdAt": "2026-01-02T10:15:00.000Z"
+  }
+]

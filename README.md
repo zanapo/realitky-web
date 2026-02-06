@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Realitní dům — moderní realitní web
 
-## Getting Started
+Kompletní redesign realitního webu postavený na Next.js (App Router), Tailwind CSS a shadcn/ui. Struktura je vícestránková, server-side listing je optimalizovaný pro rychlost i SEO.
 
-First, run the development server:
+## Požadavky
+
+- Node.js 20+
+- pnpm 10+
+
+## Spuštění lokálně
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Web běží na `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ENV konfigurace
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Zkopírujte `.env.example` do `.env` a doplňte hodnoty.
 
-## Learn More
+```bash
+cp .env.example .env
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Přepnutí zdroje dat
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `DATA_SOURCE=mock` načítá data z `content/properties.json`.
+- `DATA_SOURCE=feed` načítá data z externího feedu přes `PROPERTIES_FEED_URL`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Odesílání emailů
 
-## Deploy on Vercel
+Používá se SMTP přes Nodemailer:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `SMTP_HOST`
+- `SMTP_PORT`
+- `SMTP_USER`
+- `SMTP_PASS`
+- `SMTP_FROM`
+- `SMTP_TO`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Testy
+
+```bash
+pnpm test:unit
+pnpm test:e2e
+```
+
+Playwright smoke testy vyžadují běžící dev server.
+
+## Struktura projektu
+
+- `app/` — App Router stránky a API route.
+- `components/` — UI a prezentační komponenty.
+- `lib/` — datasources, validace, formattery, SEO helpers.
+- `content/` — mock data pro nemovitosti a blog.
+
+## Deploy
+
+Projekt je připravený pro deploy na Vercel nebo jiném Node hostingu.
