@@ -7,6 +7,7 @@ import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetHeader,
   SheetTitle,
@@ -57,21 +58,23 @@ export const SiteHeader = () => (
           </SheetHeader>
           <div className="mt-6 flex flex-col gap-4">
             {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-base font-medium"
-              >
-                {item.label}
-              </Link>
+              <SheetClose asChild key={item.href}>
+                <Link href={item.href} className="text-base font-medium">
+                  {item.label}
+                </Link>
+              </SheetClose>
             ))}
             <div className="mt-4 flex flex-col gap-3">
-              <Button variant="outline" asChild className={cn("w-full")}>
-                <Link href="/nabizim">Nabídnout nemovitost</Link>
-              </Button>
-              <Button asChild className={cn("w-full")}>
-                <Link href="/hledam">Hledám bydlení</Link>
-              </Button>
+              <SheetClose asChild>
+                <Button variant="outline" asChild className={cn("w-full")}>
+                  <Link href="/nabizim">Nabídnout nemovitost</Link>
+                </Button>
+              </SheetClose>
+              <SheetClose asChild>
+                <Button asChild className={cn("w-full")}>
+                  <Link href="/hledam">Hledám bydlení</Link>
+                </Button>
+              </SheetClose>
             </div>
           </div>
         </SheetContent>
